@@ -32,7 +32,7 @@ export default (store) => {
    */
   return (
     <Route path="/" component={App}>
-      <IndexRoute component={Home}/>
+      {/*<IndexRoute component={Home}/>*/}
 
       <Route onEnter={requireLogin}>
         {/* <Route path="chat" component={Chat}/> */}
