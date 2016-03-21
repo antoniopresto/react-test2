@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { IndexLink } from 'react-router';
 import Navbar from 'react-bootstrap/lib/Navbar';
 import Nav from 'react-bootstrap/lib/Nav';
 import Helmet from 'react-helmet';
@@ -59,29 +58,30 @@ export default class App extends Component {
 
   render() {
     const styles = require('./App.scss');
+    const imgLogo = require('../Home/inceres_logo.png');
+    const imgImportar = require('../Home/import.png');
+    const imgTime = require('../Home/time.png');
+    const imgSair = require('../Home/cancel.png');
     return (
       <div className={styles.app}>
         <Helmet {...config.app.head}/>
         <Navbar fixedTop>
           <Navbar.Header>
             <Navbar.Brand>
-              <IndexLink to="/" activeStyle={{color: '#fff'}}>
-                <div className={styles.brand}/>
-              </IndexLink>
-              <span>{config.app.title}</span>
               <p>Fazenda Boa Vista</p>
-            </Navbar.Brand> 
+            </Navbar.Brand>
             <Navbar.Toggle/>
           </Navbar.Header>
 
           <Navbar.Collapse eventKey={0}>
             <Nav navbar>
-              <Button classe="default" texto="Selecionar Time"/>
-              <Button classe="primary" texto="Importar"/>
-              <Button classe="default" texto="Ajuda"/>
-              <Button classe="default" texto="Sair"/>
-              <ButtonDropdown titulo="Camadas"/>
-              <ButtonDropdown titulo="Layout"/>
+              <Button classe="default" texto="Selecionar Time" size="default"/>&nbsp;&nbsp;
+              <a href="#" className="btn btn-primary" style={{marginTop: "10px", height: "34px", fontSize: "15px"}}><img src={imgImportar} style={{marginTop: "-5px"}}/>&nbsp;&nbsp;Importar</a>&nbsp;&nbsp;
+              <a href="#" className="btn btn-default" style={{marginTop: "10px"}} size="default"><img src={imgTime} style={{width: "24px"}}/></a>
+              <Button classe="default" texto="Ajuda" size="default"/>&nbsp;&nbsp;
+              <a href="#" className="btn btn-default" style={{marginTop: "10px"}}><img src={imgSair}/>&nbsp;&nbsp;Sair</a>
+              <ButtonDropdown titulo="Camadas" size="default"/>
+              <ButtonDropdown titulo="Layout" size="default"/>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
